@@ -50,6 +50,8 @@ class LotteryViewController: UIViewController {
     
     let roundPickerView = UIPickerView()
     
+    var roundArray: [Int] = Array(1...1000)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +59,26 @@ class LotteryViewController: UIViewController {
         configureLayout()
         configureUI()
         configurePickerView()
+        setLotteryData(roundNumber: 986)
+    }
+    
+    func setLotteryData(roundNumber: Int) {
+        AF.request(APIURL.lotteryURL + "\(roundNumber)").responseDecodable(of: Lottery.self) { response in
+            switch response.result {
+            case .success(let value):
+                self.drawDateLabel.text = "\(value.drwNoDate) 추첨"
+                self.firstNumberLabel.text = "\(value.drwtNo1)"
+                self.secondNumberLabel.text = "\(value.drwtNo2)"
+                self.thirdNumberLabel.text = "\(value.drwtNo3)"
+                self.forthNumberLabel.text = "\(value.drwtNo4)"
+                self.fifthNumberLabel.text = "\(value.drwtNo5)"
+                self.sixthNumberLabel.text = "\(value.drwtNo6)"
+                self.bonusNumberLabel.text = "\(value.bnusNo)"
+                self.roundNumberLabel.text = "\(value.drwNo)회"
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     func configurePickerView() {
@@ -222,7 +244,6 @@ class LotteryViewController: UIViewController {
         InfoLabel.font = .systemFont(ofSize: 17)
         
         // drawDateLabel
-        drawDateLabel.text = "0000-00-00 추첨"
         drawDateLabel.textColor = .darkGray
         drawDateLabel.textAlignment = .right
         drawDateLabel.font = .systemFont(ofSize: 15)
@@ -233,8 +254,7 @@ class LotteryViewController: UIViewController {
         // roundResultInfoStackView
         roundResultInfoStackView.spacing = 8
         
-        // roundNumberLabel +
-        roundNumberLabel.text = "000회"
+        // roundNumberLabel
         roundNumberLabel.textColor = .systemYellow
         roundNumberLabel.font = .boldSystemFont(ofSize: 25)
         
@@ -278,7 +298,6 @@ class LotteryViewController: UIViewController {
         
         [firstNumberLabel, secondNumberLabel, thirdNumberLabel, forthNumberLabel, fifthNumberLabel, sixthNumberLabel, bonusNumberLabel].forEach {
             $0.textColor = .white
-            $0.text = "8"
             $0.textAlignment = .center
             $0.font = .boldSystemFont(ofSize: 15)
         }
@@ -289,14 +308,22 @@ class LotteryViewController: UIViewController {
 
 extension LotteryViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        10
+        return roundArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let stringRoundArray = String(roundArray[row])
+        return "\(stringRoundArray)회"
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("?")
+        let stringRoundArray = String(roundArray[row])
+        inputTextField.text = stringRoundArray
+        roundNumberLabel.text = "\(stringRoundArray)회"
+        setLotteryData(roundNumber: roundArray[row])
     }
 }
