@@ -50,7 +50,7 @@ class LotteryViewController: UIViewController {
     
     let roundPickerView = UIPickerView()
     
-    var roundArray: [Int] = Array(1...1000)
+    var roundArray: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,27 +58,15 @@ class LotteryViewController: UIViewController {
         configurHierarchy()
         configureLayout()
         configureUI()
+        configureTextField()
         configurePickerView()
-        setLotteryData(roundNumber: 986)
+        let lastRound = getLastRound(year: 2002, month: 12, day: 21)
+        roundArray = Array(1...lastRound).reversed()
+        setLotteryData(roundNumber: lastRound)
     }
     
-    func setLotteryData(roundNumber: Int) {
-        AF.request(APIURL.lotteryURL + "\(roundNumber)").responseDecodable(of: Lottery.self) { response in
-            switch response.result {
-            case .success(let value):
-                self.drawDateLabel.text = "\(value.drwNoDate) 추첨"
-                self.firstNumberLabel.text = "\(value.drwtNo1)"
-                self.secondNumberLabel.text = "\(value.drwtNo2)"
-                self.thirdNumberLabel.text = "\(value.drwtNo3)"
-                self.forthNumberLabel.text = "\(value.drwtNo4)"
-                self.fifthNumberLabel.text = "\(value.drwtNo5)"
-                self.sixthNumberLabel.text = "\(value.drwtNo6)"
-                self.bonusNumberLabel.text = "\(value.bnusNo)"
-                self.roundNumberLabel.text = "\(value.drwNo)회"
-            case .failure(let error):
-                print(error)
-            }
-        }
+    func configureTextField() {
+        inputTextField.inputAccessoryView = roundPickerView
     }
     
     func configurePickerView() {
@@ -115,7 +103,6 @@ class LotteryViewController: UIViewController {
         bonusNumberView.addSubview(bonusNumberLabel)
         
         view.addSubview(bonusLabel)
-        view.addSubview(roundPickerView)
     }
     
     func configureLayout() {
@@ -218,17 +205,18 @@ class LotteryViewController: UIViewController {
         bonusNumberLabel.snp.makeConstraints {
             $0.center.equalTo(bonusNumberView.snp.center)
         }
-        
-        roundPickerView.snp.makeConstraints {
-            $0.bottom.equalTo(safeArea).offset(-20)
-            $0.centerX.equalTo(safeArea)
-            $0.height.equalTo(150)
-        }
+    }
+    
+    @objc func viewTapped() {
+        self.inputTextField.resignFirstResponder()
     }
     
     func configureUI() {
         // container view
         view.backgroundColor = .white
+        
+        let viewGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        view.addGestureRecognizer(viewGesture)
         
         // inputTextField
         inputTextField.layer.borderColor = UIColor.black.cgColor
@@ -303,6 +291,38 @@ class LotteryViewController: UIViewController {
         }
         
         roundPickerView.backgroundColor = .systemGray6
+    }
+    
+    func setLotteryData(roundNumber: Int) {
+        AF.request(APIURL.lotteryURL + "\(roundNumber)").responseDecodable(of: Lottery.self) { response in
+            switch response.result {
+            case .success(let value):
+                self.drawDateLabel.text = "\(value.drwNoDate) 추첨"
+                self.firstNumberLabel.text = "\(value.drwtNo1)"
+                self.secondNumberLabel.text = "\(value.drwtNo2)"
+                self.thirdNumberLabel.text = "\(value.drwtNo3)"
+                self.forthNumberLabel.text = "\(value.drwtNo4)"
+                self.fifthNumberLabel.text = "\(value.drwtNo5)"
+                self.sixthNumberLabel.text = "\(value.drwtNo6)"
+                self.bonusNumberLabel.text = "\(value.bnusNo)"
+                self.roundNumberLabel.text = "\(value.drwNo)회"
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func getLastRound(year: Int, month: Int, day: Int) -> Int {
+        let dateComponents = DateComponents(year: year, month: month, day: day)
+        if let startDate = Calendar.current.date(from: dateComponents) {
+            let diffBetweenTwoDates = Calendar.current.dateComponents([.day], from: startDate, to: Date())
+
+            if let d = diffBetweenTwoDates.day {
+                return (d / 7) + 1
+            }
+        }
+        
+        return 0
     }
 }
 
