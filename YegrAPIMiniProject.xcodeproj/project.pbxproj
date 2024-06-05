@@ -10,10 +10,11 @@
 		685164F32C10416900268CC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164F22C10416900268CC1 /* AppDelegate.swift */; };
 		685164F52C10416900268CC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164F42C10416900268CC1 /* SceneDelegate.swift */; };
 		685164F72C10416900268CC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164F62C10416900268CC1 /* ViewController.swift */; };
-		685164FA2C10416900268CC1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 685164F92C10416900268CC1 /* Base */; };
 		685164FC2C10416A00268CC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685164FB2C10416A00268CC1 /* Assets.xcassets */; };
 		685164FF2C10416A00268CC1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 685164FE2C10416A00268CC1 /* Base */; };
 		685165092C1041C300268CC1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 685165082C1041C300268CC1 /* .gitignore */; };
+		6851650F2C10433000268CC1 /* LotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851650E2C10433000268CC1 /* LotteryViewController.swift */; };
+		685165112C10435B00268CC1 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685165102C10435B00268CC1 /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +22,12 @@
 		685164F22C10416900268CC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		685164F42C10416900268CC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		685164F62C10416900268CC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		685164F92C10416900268CC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		685164FB2C10416A00268CC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		685164FE2C10416A00268CC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		685165002C10416A00268CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		685165082C1041C300268CC1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		6851650E2C10433000268CC1 /* LotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryViewController.swift; sourceTree = "<group>"; };
+		685165102C10435B00268CC1 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +64,45 @@
 				685164F22C10416900268CC1 /* AppDelegate.swift */,
 				685164F42C10416900268CC1 /* SceneDelegate.swift */,
 				685164F62C10416900268CC1 /* ViewController.swift */,
-				685164F82C10416900268CC1 /* Main.storyboard */,
 				685164FB2C10416A00268CC1 /* Assets.xcassets */,
 				685164FD2C10416A00268CC1 /* LaunchScreen.storyboard */,
+				6851650A2C1041EF00268CC1 /* Lottery */,
+				6851650B2C10421D00268CC1 /* BoxOffice */,
+				6851650C2C10422C00268CC1 /* Weather */,
+				6851650D2C10424500268CC1 /* Extension */,
 				685165002C10416A00268CC1 /* Info.plist */,
+				685165102C10435B00268CC1 /* APIKey.swift */,
 			);
 			path = YegrAPIMiniProject;
+			sourceTree = "<group>";
+		};
+		6851650A2C1041EF00268CC1 /* Lottery */ = {
+			isa = PBXGroup;
+			children = (
+				6851650E2C10433000268CC1 /* LotteryViewController.swift */,
+			);
+			path = Lottery;
+			sourceTree = "<group>";
+		};
+		6851650B2C10421D00268CC1 /* BoxOffice */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BoxOffice;
+			sourceTree = "<group>";
+		};
+		6851650C2C10422C00268CC1 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		6851650D2C10424500268CC1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +166,6 @@
 				685165092C1041C300268CC1 /* .gitignore in Resources */,
 				685164FC2C10416A00268CC1 /* Assets.xcassets in Resources */,
 				685164FF2C10416A00268CC1 /* Base in Resources */,
-				685164FA2C10416900268CC1 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,23 +176,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6851650F2C10433000268CC1 /* LotteryViewController.swift in Sources */,
 				685164F72C10416900268CC1 /* ViewController.swift in Sources */,
 				685164F32C10416900268CC1 /* AppDelegate.swift in Sources */,
 				685164F52C10416900268CC1 /* SceneDelegate.swift in Sources */,
+				685165112C10435B00268CC1 /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		685164F82C10416900268CC1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				685164F92C10416900268CC1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		685164FD2C10416A00268CC1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -300,7 +328,6 @@
 				INFOPLIST_FILE = YegrAPIMiniProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -332,7 +359,6 @@
 				INFOPLIST_FILE = YegrAPIMiniProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
