@@ -232,7 +232,7 @@ class LotteryView: UIView {
         roundResultInfoStackView.spacing = 8
         
         // roundNumberLabel
-        roundNumberLabel.textColor = .systemYellow
+        roundNumberLabel.textColor = .systemOrange
         roundNumberLabel.font = .boldSystemFont(ofSize: 25)
         
         resultInfoLabel.text = "당첨 결과"

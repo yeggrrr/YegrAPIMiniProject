@@ -13,6 +13,7 @@ class LotteryViewController: UIViewController {
     let lotteryView = LotteryView()
     
     var roundArray: [Int] = []
+    var lottery: Lottery?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,18 +46,25 @@ class LotteryViewController: UIViewController {
         AF.request(APIURL.lotteryURL + "\(roundNumber)").responseDecodable(of: Lottery.self) { response in
             switch response.result {
             case .success(let value):
-                self.lotteryView.drawDateLabel.text = "\(value.drwNoDate) 추첨"
-                self.lotteryView.firstNumberLabel.text = "\(value.drwtNo1)"
-                self.lotteryView.secondNumberLabel.text = "\(value.drwtNo2)"
-                self.lotteryView.thirdNumberLabel.text = "\(value.drwtNo3)"
-                self.lotteryView.forthNumberLabel.text = "\(value.drwtNo4)"
-                self.lotteryView.fifthNumberLabel.text = "\(value.drwtNo5)"
-                self.lotteryView.sixthNumberLabel.text = "\(value.drwtNo6)"
-                self.lotteryView.bonusNumberLabel.text = "\(value.bnusNo)"
-                self.lotteryView.roundNumberLabel.text = "\(value.drwNo)회"
+                self.lottery = value
+                self.reloadLottery()
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    func reloadLottery() {
+        if let lottery = lottery {
+            lotteryView.drawDateLabel.text = "\(lottery.drwNoDate) 추첨"
+            lotteryView.firstNumberLabel.text = "\(lottery.drwtNo1)"
+            lotteryView.secondNumberLabel.text = "\(lottery.drwtNo2)"
+            lotteryView.thirdNumberLabel.text = "\(lottery.drwtNo3)"
+            lotteryView.forthNumberLabel.text = "\(lottery.drwtNo4)"
+            lotteryView.fifthNumberLabel.text = "\(lottery.drwtNo5)"
+            lotteryView.sixthNumberLabel.text = "\(lottery.drwtNo6)"
+            lotteryView.bonusNumberLabel.text = "\(lottery.bnusNo)"
+            lotteryView.roundNumberLabel.text = "\(lottery.drwNo)회"
         }
     }
     
@@ -84,14 +92,13 @@ extension LotteryViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let stringRoundArray = String(roundArray[row])
-        return "\(stringRoundArray)회"
+        return "\(roundArray[row])회"
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let stringRoundArray = String(roundArray[row])
-        lotteryView.inputTextField.text = stringRoundArray
-        lotteryView.roundNumberLabel.text = "\(stringRoundArray)회"
-        setLotteryData(roundNumber: roundArray[row])
+        let round = roundArray[row]
+        lotteryView.inputTextField.text = "\(round)회"
+        lotteryView.roundNumberLabel.text = "\(round)회"
+        setLotteryData(roundNumber: round)
     }
 }

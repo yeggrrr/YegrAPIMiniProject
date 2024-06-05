@@ -86,9 +86,9 @@
 		6851650A2C1041EF00268CC1 /* Lottery */ = {
 			isa = PBXGroup;
 			children = (
-				6851650E2C10433000268CC1 /* LotteryViewController.swift */,
 				6851651B2C105FA600268CC1 /* LotteryData.swift */,
 				689BAD292C10D51000BCD61F /* LotteryView.swift */,
+				6851650E2C10433000268CC1 /* LotteryViewController.swift */,
 			);
 			path = Lottery;
 			sourceTree = "<group>";
