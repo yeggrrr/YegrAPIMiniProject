@@ -13,6 +13,7 @@
 		685164FA2C10416900268CC1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 685164F92C10416900268CC1 /* Base */; };
 		685164FC2C10416A00268CC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685164FB2C10416A00268CC1 /* Assets.xcassets */; };
 		685164FF2C10416A00268CC1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 685164FE2C10416A00268CC1 /* Base */; };
+		685165092C1041C300268CC1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 685165082C1041C300268CC1 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		685164FB2C10416A00268CC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		685164FE2C10416A00268CC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		685165002C10416A00268CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		685165082C1041C300268CC1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		685164E62C10416900268CC1 = {
 			isa = PBXGroup;
 			children = (
+				685165082C1041C300268CC1 /* .gitignore */,
 				685164F12C10416900268CC1 /* YegrAPIMiniProject */,
 				685164F02C10416900268CC1 /* Products */,
 			);
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				685165092C1041C300268CC1 /* .gitignore in Resources */,
 				685164FC2C10416A00268CC1 /* Assets.xcassets in Resources */,
 				685164FF2C10416A00268CC1 /* Base in Resources */,
 				685164FA2C10416900268CC1 /* Base in Resources */,
