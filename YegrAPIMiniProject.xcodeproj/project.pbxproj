@@ -9,19 +9,20 @@
 /* Begin PBXBuildFile section */
 		685164F32C10416900268CC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164F22C10416900268CC1 /* AppDelegate.swift */; };
 		685164F52C10416900268CC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164F42C10416900268CC1 /* SceneDelegate.swift */; };
-		685164F72C10416900268CC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164F62C10416900268CC1 /* ViewController.swift */; };
 		685164FC2C10416A00268CC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685164FB2C10416A00268CC1 /* Assets.xcassets */; };
 		685164FF2C10416A00268CC1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 685164FE2C10416A00268CC1 /* Base */; };
 		685165092C1041C300268CC1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 685165082C1041C300268CC1 /* .gitignore */; };
 		6851650F2C10433000268CC1 /* LotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851650E2C10433000268CC1 /* LotteryViewController.swift */; };
 		685165112C10435B00268CC1 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685165102C10435B00268CC1 /* APIKey.swift */; };
+		685165142C1045FF00268CC1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 685165132C1045FF00268CC1 /* Kingfisher */; };
+		685165172C10460D00268CC1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 685165162C10460D00268CC1 /* Alamofire */; };
+		6851651A2C10461800268CC1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 685165192C10461800268CC1 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		685164EF2C10416900268CC1 /* YegrAPIMiniProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YegrAPIMiniProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		685164F22C10416900268CC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		685164F42C10416900268CC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		685164F62C10416900268CC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		685164FB2C10416A00268CC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		685164FE2C10416A00268CC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		685165002C10416A00268CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +36,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6851651A2C10461800268CC1 /* SnapKit in Frameworks */,
+				685165142C1045FF00268CC1 /* Kingfisher in Frameworks */,
+				685165172C10460D00268CC1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +67,6 @@
 			children = (
 				685164F22C10416900268CC1 /* AppDelegate.swift */,
 				685164F42C10416900268CC1 /* SceneDelegate.swift */,
-				685164F62C10416900268CC1 /* ViewController.swift */,
 				685164FB2C10416A00268CC1 /* Assets.xcassets */,
 				685164FD2C10416A00268CC1 /* LaunchScreen.storyboard */,
 				6851650A2C1041EF00268CC1 /* Lottery */,
@@ -121,6 +124,11 @@
 			dependencies = (
 			);
 			name = YegrAPIMiniProject;
+			packageProductDependencies = (
+				685165132C1045FF00268CC1 /* Kingfisher */,
+				685165162C10460D00268CC1 /* Alamofire */,
+				685165192C10461800268CC1 /* SnapKit */,
+			);
 			productName = YegrAPIMiniProject;
 			productReference = 685164EF2C10416900268CC1 /* YegrAPIMiniProject.app */;
 			productType = "com.apple.product-type.application";
@@ -149,6 +157,11 @@
 				Base,
 			);
 			mainGroup = 685164E62C10416900268CC1;
+			packageReferences = (
+				685165122C1045FF00268CC1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				685165152C10460D00268CC1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				685165182C10461800268CC1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 685164F02C10416900268CC1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -177,7 +190,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6851650F2C10433000268CC1 /* LotteryViewController.swift in Sources */,
-				685164F72C10416900268CC1 /* ViewController.swift in Sources */,
 				685164F32C10416900268CC1 /* AppDelegate.swift in Sources */,
 				685164F52C10416900268CC1 /* SceneDelegate.swift in Sources */,
 				685165112C10435B00268CC1 /* APIKey.swift in Sources */,
@@ -401,6 +413,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		685165122C1045FF00268CC1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+		685165152C10460D00268CC1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		685165182C10461800268CC1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		685165132C1045FF00268CC1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 685165122C1045FF00268CC1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		685165162C10460D00268CC1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 685165152C10460D00268CC1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		685165192C10461800268CC1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 685165182C10461800268CC1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 685164E72C10416900268CC1 /* Project object */;
 }
