@@ -18,6 +18,7 @@
 		685165172C10460D00268CC1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 685165162C10460D00268CC1 /* Alamofire */; };
 		6851651A2C10461800268CC1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 685165192C10461800268CC1 /* SnapKit */; };
 		6851651C2C105FA600268CC1 /* LotteryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851651B2C105FA600268CC1 /* LotteryData.swift */; };
+		689BAD2A2C10D51000BCD61F /* LotteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD292C10D51000BCD61F /* LotteryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		6851650E2C10433000268CC1 /* LotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryViewController.swift; sourceTree = "<group>"; };
 		685165102C10435B00268CC1 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		6851651B2C105FA600268CC1 /* LotteryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryData.swift; sourceTree = "<group>"; };
+		689BAD292C10D51000BCD61F /* LotteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				6851650E2C10433000268CC1 /* LotteryViewController.swift */,
 				6851651B2C105FA600268CC1 /* LotteryData.swift */,
+				689BAD292C10D51000BCD61F /* LotteryView.swift */,
 			);
 			path = Lottery;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				6851650F2C10433000268CC1 /* LotteryViewController.swift in Sources */,
 				685164F32C10416900268CC1 /* AppDelegate.swift in Sources */,
 				685164F52C10416900268CC1 /* SceneDelegate.swift in Sources */,
+				689BAD2A2C10D51000BCD61F /* LotteryView.swift in Sources */,
 				685165112C10435B00268CC1 /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
