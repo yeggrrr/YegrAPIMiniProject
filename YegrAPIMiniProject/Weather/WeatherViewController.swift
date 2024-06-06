@@ -17,6 +17,7 @@ class WeatherViewController: UIViewController {
         configurHierarchy()
         configureLayout()
         configureUI()
+        getWeatherData()
     }
     
     func configurHierarchy() {
@@ -28,7 +29,17 @@ class WeatherViewController: UIViewController {
     }
     
     func configureUI() {
-        
+        view.backgroundColor = .white
     }
-
+    
+    func getWeatherData() {
+        AF.request("\(APIURL.weatherURL)\(APIKey.weatherKey)").responseString { response in
+            switch response.result {
+            case .success(let value):
+                print(value)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
