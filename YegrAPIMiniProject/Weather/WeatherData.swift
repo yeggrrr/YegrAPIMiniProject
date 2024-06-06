@@ -8,50 +8,25 @@
 import UIKit
 
 struct WeatherInfo {
-    let message: String
-    let cod: String
-    let count: Int
-    let list: [list]
-}
-
-struct list {
+    let coord: Coord
+    let weather: [Weather]
+    let base: String
+    let main: Main
+    let visibility: Int
+    let wind: Wind
+    let rain: Rain
+    let clouds: Clouds
+    let dt: Int
+    let sys: Sys
+    let timezone: Int
     let id: Int
     let name: String
-    let coord: Coord
-    let main: Main
-    let dt: Int
-    let wind: Wind
-    let sys: Sys
-    let rain: String?
-    let snow: String?
-    let clouds: Clouds
-    let weather: [Weather]
+    let cod: Int
 }
 
 struct Coord {
-    let lat: Double
     let lon: Double
-}
-
-struct Main {
-    let temp: Double
-    let pressure: Int
-    let humidity: Int
-    let temp_min: Double
-    let temp_max: Double
-}
-
-struct Wind {
-    let speed: Double
-    let deg: Int
-}
-
-struct Sys {
-    let country: String
-}
-
-struct Clouds {
-    let all: Int
+    let lat: Double
 }
 
 struct Weather {
@@ -59,4 +34,41 @@ struct Weather {
     let main: String
     let description: String
     let icon: String
+}
+
+struct Main {
+    let temp: Double
+    let feels_like:Double
+    let temp_min: Double
+    let temp_max: Double
+    let pressure: Int
+    let humidity: Int
+    let sea_level: Int
+    let grnd_level: Int
+}
+
+struct Wind {
+    let speed: Double
+    let deg: Int
+    let gust: Double
+}
+
+struct Rain: Codable {
+    let perHour: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case perHour = "1h"
+    }
+}
+
+struct Clouds {
+    let all: Int
+}
+
+struct Sys {
+    let type: Int
+    let id: Int
+    let country: String
+    let sunrise: Int
+    let sunset: Int
 }
