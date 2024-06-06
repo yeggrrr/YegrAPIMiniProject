@@ -62,8 +62,27 @@ class BoxOfficeViewController: UIViewController {
     
     @objc func searchButtonClicked() {
         guard let text = boxOfficeView.searchTextField.text else { return }
-        setBoxOfficeData(date: text)
+    
+        if text == "" {
+            noticeAlert()
+        } else if text.count != 8 {
+            noticeAlert()
+        } else if Int(text) == nil {
+            noticeAlert()
+        } else {
+            setBoxOfficeData(date: text)
+        }
+        
         boxOfficeView.boxOfficeTableView.reloadData()
+    }
+    
+    func noticeAlert() {
+        let alert = UIAlertController(title: "날짜를 입력해주세요!", message: "ex. 20240101", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(okButton)
+        present(alert, animated: true)
+        setBoxOfficeData(date: getYesterdayDate())
+        boxOfficeView.searchTextField.text = ""
     }
 }
 
