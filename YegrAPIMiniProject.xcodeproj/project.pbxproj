@@ -23,6 +23,7 @@
 		689BAD2E2C10E0CE00BCD61F /* BoxOfficeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD2D2C10E0CE00BCD61F /* BoxOfficeView.swift */; };
 		689BAD302C10E37B00BCD61F /* BoxOfficeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD2F2C10E37B00BCD61F /* BoxOfficeTableViewCell.swift */; };
 		689BAD322C10E46A00BCD61F /* ReusableProtocol+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD312C10E46A00BCD61F /* ReusableProtocol+.swift */; };
+		689BAD342C11BC2700BCD61F /* boxOfficeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD332C11BC2700BCD61F /* boxOfficeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		689BAD2D2C10E0CE00BCD61F /* BoxOfficeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeView.swift; sourceTree = "<group>"; };
 		689BAD2F2C10E37B00BCD61F /* BoxOfficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableViewCell.swift; sourceTree = "<group>"; };
 		689BAD312C10E46A00BCD61F /* ReusableProtocol+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableProtocol+.swift"; sourceTree = "<group>"; };
+		689BAD332C11BC2700BCD61F /* boxOfficeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boxOfficeData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		6851650B2C10421D00268CC1 /* BoxOffice */ = {
 			isa = PBXGroup;
 			children = (
+				689BAD332C11BC2700BCD61F /* boxOfficeData.swift */,
 				689BAD2F2C10E37B00BCD61F /* BoxOfficeTableViewCell.swift */,
 				689BAD2D2C10E0CE00BCD61F /* BoxOfficeView.swift */,
 				689BAD2B2C10E08600BCD61F /* BoxOfficeViewController.swift */,
@@ -209,6 +212,7 @@
 			files = (
 				689BAD302C10E37B00BCD61F /* BoxOfficeTableViewCell.swift in Sources */,
 				6851651C2C105FA600268CC1 /* LotteryData.swift in Sources */,
+				689BAD342C11BC2700BCD61F /* boxOfficeData.swift in Sources */,
 				689BAD322C10E46A00BCD61F /* ReusableProtocol+.swift in Sources */,
 				6851650F2C10433000268CC1 /* LotteryViewController.swift in Sources */,
 				685164F32C10416900268CC1 /* AppDelegate.swift in Sources */,
