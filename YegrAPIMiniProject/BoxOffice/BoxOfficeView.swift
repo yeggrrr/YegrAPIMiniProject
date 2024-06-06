@@ -51,7 +51,6 @@ class BoxOfficeView: UIView {
             $0.height.equalTo(50)
         }
         
-        
         boxOfficeTableView.snp.makeConstraints {
             $0.top.equalTo(searchTextField.snp.bottom)
             $0.leading.trailing.bottom.equalTo(safeArea)
@@ -59,8 +58,9 @@ class BoxOfficeView: UIView {
     }
     
     func configureUI() {
-        searchTextField.backgroundColor = .systemGray
-        searchButton.backgroundColor = .systemBlue
-        boxOfficeTableView.backgroundColor = .white
+        searchTextField.setCustomUI("날짜를 입력해주세요 (ex. 20240101)", isSecureText: false, .numberPad)
+        searchTextField.layer.borderWidth = 1
+        searchTextField.layer.borderColor = UIColor.systemGray6.cgColor
+        searchButton.setUI(title: "검색", titleColor: .label)
     }
 }

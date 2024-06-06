@@ -18,7 +18,7 @@ struct BoxOfficeResult: Decodable {
 }
 
 struct DailyBoxOfficeList: Decodable {
-    let rank: String // 랭크
-    let movieNm: String // 영화 이름
-    let openDt: String // 개봉일
+    let rank: String
+    let movieNm: String
+    let openDt: String
 }

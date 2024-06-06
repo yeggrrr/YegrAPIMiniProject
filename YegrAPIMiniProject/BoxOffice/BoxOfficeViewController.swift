@@ -11,7 +11,6 @@ import Alamofire
 
 class BoxOfficeViewController: UIViewController {
     let boxOfficeView = BoxOfficeView()
-    let currentDate = Date()
     var boxOffice: BoxOffice?
     var boxOfficeList: [DailyBoxOfficeList] = []
     
@@ -20,29 +19,29 @@ class BoxOfficeViewController: UIViewController {
         
         configureUI()
         configureTableView()
-        setBoxOfficeData(currentDate: 20240605)
+        setBoxOfficeData(date: getYesterdayDate())
     }
     
     func configureUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .darkGray
         view.addSubview(boxOfficeView)
         boxOfficeView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
+        boxOfficeView.searchButton.addTarget(self, action: #selector(searchButtonClicked), for: .touchUpInside)
     }
     
     func configureTableView() {
         boxOfficeView.boxOfficeTableView.dataSource = self
         boxOfficeView.boxOfficeTableView.delegate = self
-        
         boxOfficeView.boxOfficeTableView.register(BoxOfficeTableViewCell.self, forCellReuseIdentifier: BoxOfficeTableViewCell.id)
+        boxOfficeView.boxOfficeTableView.backgroundColor = .darkGray
     }
     
-    func setBoxOfficeData(currentDate: Int) {
-        AF.request("\(APIURL.boxOfficeURL)key=\(APIKey.boxOfficeKey)&targetDt=\(currentDate)").responseDecodable(of: BoxOffice.self) { response in
+    func setBoxOfficeData(date: String) {
+        AF.request("\(APIURL.boxOfficeURL)key=\(APIKey.boxOfficeKey)&targetDt=\(date)").responseDecodable(of: BoxOffice.self) { response in
             switch response.result {
             case .success(let value):
-                print(value)
                 self.boxOfficeList = value.boxOfficeResult.dailyBoxOfficeList
                 self.boxOfficeView.boxOfficeTableView.reloadData()
             case .failure(let error):
@@ -51,6 +50,21 @@ class BoxOfficeViewController: UIViewController {
         }
     }
     
+    func getYesterdayDate() -> String {
+        if let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date()) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyyMMdd"
+            let yesterdayDate = dateFormatter.string(from: yesterday)
+            return yesterdayDate
+        }
+        return "-"
+    }
+    
+    @objc func searchButtonClicked() {
+        guard let text = boxOfficeView.searchTextField.text else { return }
+        setBoxOfficeData(date: text)
+        boxOfficeView.boxOfficeTableView.reloadData()
+    }
 }
 
 extension BoxOfficeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -64,10 +78,9 @@ extension BoxOfficeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BoxOfficeTableViewCell.id, for: indexPath) as? BoxOfficeTableViewCell else { return UITableViewCell() }
-        cell.rankLabel.text = boxOfficeList[indexPath.row].rank
-        cell.moiveNameLabel.text = boxOfficeList[indexPath.row].movieNm
-        cell.dateLabel.text = boxOfficeList[indexPath.row].openDt
         
+        let topTenData = boxOfficeList[indexPath.row]
+        cell.configureCell(boxOfficeData: topTenData)
         return cell
     }
 }

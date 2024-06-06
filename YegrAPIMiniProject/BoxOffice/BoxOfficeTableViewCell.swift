@@ -13,7 +13,6 @@ class BoxOfficeTableViewCell: UITableViewCell {
     let moiveNameLabel = UILabel()
     let dateLabel = UILabel()
     
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -65,19 +64,23 @@ class BoxOfficeTableViewCell: UITableViewCell {
     func configureUI() {
         rankView.backgroundColor = .systemGray6
         
-        rankLabel.text = "1"
         rankLabel.textColor = .label
         rankLabel.font = .boldSystemFont(ofSize: 15)
         
-        moiveNameLabel.backgroundColor = .systemGray6
-        moiveNameLabel.text = "제목"
-        moiveNameLabel.textColor = .label
+        moiveNameLabel.backgroundColor = .clear
+        moiveNameLabel.textColor = .white
         moiveNameLabel.font = .boldSystemFont(ofSize: 15)
         
-        dateLabel.backgroundColor = .systemGray6
-        dateLabel.text = "2024-06-06"
-        dateLabel.textColor = .label
+        dateLabel.backgroundColor = .clear
+        dateLabel.textColor = .white
         dateLabel.font = .systemFont(ofSize: 13)
         dateLabel.textAlignment = .center
+    }
+    
+    func configureCell(boxOfficeData: DailyBoxOfficeList) {
+        rankLabel.text = boxOfficeData.rank
+        moiveNameLabel.text = boxOfficeData.movieNm
+        dateLabel.text = boxOfficeData.openDt
+        backgroundColor = .darkGray
     }
 }

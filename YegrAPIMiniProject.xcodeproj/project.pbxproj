@@ -24,6 +24,8 @@
 		689BAD302C10E37B00BCD61F /* BoxOfficeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD2F2C10E37B00BCD61F /* BoxOfficeTableViewCell.swift */; };
 		689BAD322C10E46A00BCD61F /* ReusableProtocol+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD312C10E46A00BCD61F /* ReusableProtocol+.swift */; };
 		689BAD342C11BC2700BCD61F /* boxOfficeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD332C11BC2700BCD61F /* boxOfficeData.swift */; };
+		689BAD382C11ED9200BCD61F /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD372C11ED9200BCD61F /* UITextField+.swift */; };
+		689BAD3A2C11EE7C00BCD61F /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD392C11EE7C00BCD61F /* UIButton+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		689BAD2F2C10E37B00BCD61F /* BoxOfficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableViewCell.swift; sourceTree = "<group>"; };
 		689BAD312C10E46A00BCD61F /* ReusableProtocol+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableProtocol+.swift"; sourceTree = "<group>"; };
 		689BAD332C11BC2700BCD61F /* boxOfficeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boxOfficeData.swift; sourceTree = "<group>"; };
+		689BAD372C11ED9200BCD61F /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		689BAD392C11EE7C00BCD61F /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				689BAD312C10E46A00BCD61F /* ReusableProtocol+.swift */,
+				689BAD372C11ED9200BCD61F /* UITextField+.swift */,
+				689BAD392C11EE7C00BCD61F /* UIButton+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -210,6 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				689BAD3A2C11EE7C00BCD61F /* UIButton+.swift in Sources */,
+				689BAD382C11ED9200BCD61F /* UITextField+.swift in Sources */,
 				689BAD302C10E37B00BCD61F /* BoxOfficeTableViewCell.swift in Sources */,
 				6851651C2C105FA600268CC1 /* LotteryData.swift in Sources */,
 				689BAD342C11BC2700BCD61F /* boxOfficeData.swift in Sources */,

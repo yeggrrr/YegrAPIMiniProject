@@ -8,11 +8,11 @@
 import UIKit
 
 struct Lottery: Decodable {
-    let totSellamnt: Int // 총 판매액
-    let returnValue: String // API 응답 성공 여부
-    let drwNoDate: String // 추첨일
-    let firstWinamnt: Int // 1등 상금
-    let drwNo: Int // 회차
+    let totSellamnt: Int
+    let returnValue: String
+    let drwNoDate: String
+    let firstWinamnt: Int
+    let drwNo: Int
     let drwtNo1: Int
     let drwtNo2: Int
     let drwtNo3: Int
@@ -20,5 +20,5 @@ struct Lottery: Decodable {
     let drwtNo5: Int
     let drwtNo6: Int
     let bnusNo: Int
-    let firstPrzwnerCo: Int // 1등 당첨 인원
+    let firstPrzwnerCo: Int
 }
