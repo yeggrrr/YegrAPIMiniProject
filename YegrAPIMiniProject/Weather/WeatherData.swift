@@ -8,49 +8,49 @@
 import UIKit
 
 struct WeatherInfo {
-    let coord: Coord
+    // let coord: Coord
     let weather: [Weather]
-    let base: String
+    // let base: String
     let main: Main
-    let visibility: Int
+    // let visibility: Int
     let wind: Wind
     let rain: Rain
     let clouds: Clouds
-    let dt: Int
-    let sys: Sys
-    let timezone: Int
-    let id: Int
+    // let dt: Int
+    // let sys: Sys
+    // let timezone: Int
+    // let id: Int
     let name: String
-    let cod: Int
+    // let cod: Int
 }
 
-struct Coord {
-    let lon: Double
-    let lat: Double
-}
+// struct Coord {
+//     let lon: Double
+//     let lat: Double
+// }
 
 struct Weather {
     let id: Int
-    let main: String
+    // let main: String
     let description: String
     let icon: String
 }
 
 struct Main {
-    let temp: Double
-    let feels_like:Double
-    let temp_min: Double
-    let temp_max: Double
-    let pressure: Int
-    let humidity: Int
-    let sea_level: Int
-    let grnd_level: Int
+    let temp: Double // 현재 온도
+    let feels_like:Double // 체감 온도
+    let temp_min: Double // 최저 온도
+    let temp_max: Double // 최고 온도
+    // let pressure: Int
+    let humidity: Int // 습도
+    // let sea_level: Int
+    // let grnd_level: Int
 }
 
 struct Wind {
-    let speed: Double
-    let deg: Int
-    let gust: Double
+    let speed: Double // 풍속
+    let deg: Int // 풍향
+    // let gust: Double
 }
 
 struct Rain: Codable {
@@ -62,13 +62,13 @@ struct Rain: Codable {
 }
 
 struct Clouds {
-    let all: Int
+    // let all: Int
 }
 
-struct Sys {
-    let type: Int
-    let id: Int
-    let country: String
-    let sunrise: Int
-    let sunset: Int
-}
+// struct Sys {
+//     let type: Int
+//     let id: Int
+//     let country: String
+//     let sunrise: Int
+//     let sunset: Int
+// }
