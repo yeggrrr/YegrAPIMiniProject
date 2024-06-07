@@ -29,7 +29,6 @@
 		689BAD3C2C120F9600BCD61F /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD3B2C120F9600BCD61F /* WeatherViewController.swift */; };
 		689BAD3E2C120FC200BCD61F /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD3D2C120FC200BCD61F /* WeatherView.swift */; };
 		689BAD402C120FD100BCD61F /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD3F2C120FD100BCD61F /* WeatherData.swift */; };
-		689BAD422C1224B800BCD61F /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD412C1224B800BCD61F /* WeatherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +53,6 @@
 		689BAD3B2C120F9600BCD61F /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		689BAD3D2C120FC200BCD61F /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		689BAD3F2C120FD100BCD61F /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
-		689BAD412C1224B800BCD61F /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +130,6 @@
 				689BAD3F2C120FD100BCD61F /* WeatherData.swift */,
 				689BAD3D2C120FC200BCD61F /* WeatherView.swift */,
 				689BAD3B2C120F9600BCD61F /* WeatherViewController.swift */,
-				689BAD412C1224B800BCD61F /* WeatherTableViewCell.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -240,7 +237,6 @@
 				685164F32C10416900268CC1 /* AppDelegate.swift in Sources */,
 				689BAD2C2C10E08600BCD61F /* BoxOfficeViewController.swift in Sources */,
 				685164F52C10416900268CC1 /* SceneDelegate.swift in Sources */,
-				689BAD422C1224B800BCD61F /* WeatherTableViewCell.swift in Sources */,
 				689BAD2A2C10D51000BCD61F /* LotteryView.swift in Sources */,
 				689BAD3C2C120F9600BCD61F /* WeatherViewController.swift in Sources */,
 				689BAD2E2C10E0CE00BCD61F /* BoxOfficeView.swift in Sources */,

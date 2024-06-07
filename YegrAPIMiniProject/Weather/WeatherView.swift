@@ -8,12 +8,18 @@
 import UIKit
 
 class WeatherView: UIView {
+    let descriptionLabelSize = 35
+    
     let backgroundImageView = UIImageView()
     let titleView = UIView()
     let titleLabel = UILabel()
     let weatherImageView = UIImageView()
     let locationLabel = UILabel()
-    let weatherTableView = UITableView()
+    let descriptionStackView = UIStackView()
+    let weatherLabel = UILabel()
+    let currentTempLabel = UILabel()
+    let lowestTempLabel = UILabel()
+    let highestTempLabel = UILabel()
    
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,7 +43,11 @@ class WeatherView: UIView {
         titleView.addSubview(titleLabel)
         addSubview(weatherImageView)
         addSubview(locationLabel)
-        addSubview(weatherTableView)
+        addSubview(descriptionStackView)
+        descriptionStackView.addArrangedSubview(weatherLabel)
+        descriptionStackView.addArrangedSubview(currentTempLabel)
+        descriptionStackView.addArrangedSubview(lowestTempLabel)
+        descriptionStackView.addArrangedSubview(highestTempLabel)
     }
     
     func configureLayout() {
@@ -64,20 +74,37 @@ class WeatherView: UIView {
         }
         
         locationLabel.snp.makeConstraints {
-            $0.top.equalTo(weatherImageView.snp.bottom).offset(5)
+            $0.top.equalTo(weatherImageView.snp.bottom).offset(10)
             $0.centerX.equalTo(safeArea)
             $0.height.equalTo(20)
         }
         
-        weatherTableView.snp.makeConstraints {
-            $0.top.equalTo(locationLabel.snp.bottom).offset(10)
-            $0.leading.trailing.bottom.equalTo(safeArea)
+        descriptionStackView.snp.makeConstraints {
+            $0.top.equalTo(locationLabel.snp.bottom).offset(40)
+            $0.centerX.equalTo(safeArea)
+        }
+        
+        weatherLabel.snp.makeConstraints {
+            $0.height.equalTo(descriptionLabelSize)
+        }
+        
+        currentTempLabel.snp.makeConstraints {
+            $0.height.equalTo(descriptionLabelSize)
+        }
+        
+        lowestTempLabel.snp.makeConstraints {
+            $0.height.equalTo(descriptionLabelSize)
+        }
+        
+        highestTempLabel.snp.makeConstraints {
+            $0.height.equalTo(descriptionLabelSize)
         }
     }
     
     func configureUI() {
         // view
-        backgroundColor = .systemGray6
+        backgroundColor = UIColor(named: "mainBackgroundColor")
+        
         
         // backgroundImageView
         backgroundImageView.image = UIImage(named: "weatherBackground")
@@ -96,14 +123,35 @@ class WeatherView: UIView {
         titleLabel.font = .boldSystemFont(ofSize: 20)
         
         // weatherImageView
-        weatherImageView.backgroundColor = .systemCyan
+        weatherImageView.backgroundColor = .white
         weatherImageView.layer.cornerRadius = 10
         
         // locationLabel
-        locationLabel.backgroundColor = .systemBrown
-        locationLabel.text = "서울"
-        locationLabel.textColor = .white
+        locationLabel.backgroundColor = .clear
+        locationLabel.textColor = .darkGray
         locationLabel.textAlignment = .center
-        locationLabel.font = .boldSystemFont(ofSize: 17)
+        locationLabel.font = .systemFont(ofSize: 20, weight: .heavy)
+        
+        // descriptionStackView
+        descriptionStackView.axis = .vertical
+        descriptionStackView.spacing = 10
+        descriptionStackView.alignment = .center
+        descriptionStackView.distribution = .fillEqually
+        
+        // weatherLabel
+        weatherLabel.textColor = .label
+        weatherLabel.font = .boldSystemFont(ofSize: 17)
+        
+        // currentTempLabel
+        currentTempLabel.textColor = .label
+        currentTempLabel.font = .boldSystemFont(ofSize: 17)
+        
+        // lowestTempLabel
+        lowestTempLabel.textColor = .label
+        lowestTempLabel.font = .boldSystemFont(ofSize: 17)
+        
+        // highestTempLabel
+        highestTempLabel.textColor = .label
+        highestTempLabel.font = .boldSystemFont(ofSize: 17)
     }
 }
