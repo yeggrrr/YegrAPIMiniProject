@@ -33,11 +33,13 @@ class WeatherViewController: UIViewController {
     }
     
     func configureLayout() {
-        let safeArea = view.safeAreaLayoutGuide
         weatherView.snp.makeConstraints {
-            $0.edges.equalTo(safeArea)
+            $0.edges.equalTo(view)
         }
         
+        weatherView.backgroundImageView.snp.makeConstraints {
+            $0.edges.equalTo(view)
+        }
     }
     
     func configureUI() {

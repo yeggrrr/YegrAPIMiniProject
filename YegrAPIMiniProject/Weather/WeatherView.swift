@@ -53,10 +53,6 @@ class WeatherView: UIView {
     func configureLayout() {
         let safeArea = safeAreaLayoutGuide
         
-        backgroundImageView.snp.makeConstraints {
-            $0.edges.equalTo(safeArea)
-        }
-        
         titleView.snp.makeConstraints {
             $0.top.equalTo(safeArea).offset(10)
             $0.leading.trailing.equalTo(safeArea).inset(30)
