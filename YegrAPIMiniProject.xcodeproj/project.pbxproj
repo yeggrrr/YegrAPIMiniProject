@@ -29,6 +29,7 @@
 		689BAD3C2C120F9600BCD61F /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD3B2C120F9600BCD61F /* WeatherViewController.swift */; };
 		689BAD3E2C120FC200BCD61F /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD3D2C120FC200BCD61F /* WeatherView.swift */; };
 		689BAD402C120FD100BCD61F /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BAD3F2C120FD100BCD61F /* WeatherData.swift */; };
+		68F161BE2C167A720059FA66 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F161BD2C167A720059FA66 /* UILabel+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		689BAD3B2C120F9600BCD61F /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		689BAD3D2C120FC200BCD61F /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		689BAD3F2C120FD100BCD61F /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		68F161BD2C167A720059FA66 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				689BAD312C10E46A00BCD61F /* ReusableProtocol+.swift */,
 				689BAD372C11ED9200BCD61F /* UITextField+.swift */,
 				689BAD392C11EE7C00BCD61F /* UIButton+.swift */,
+				68F161BD2C167A720059FA66 /* UILabel+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				689BAD302C10E37B00BCD61F /* BoxOfficeTableViewCell.swift in Sources */,
 				6851651C2C105FA600268CC1 /* LotteryData.swift in Sources */,
 				689BAD342C11BC2700BCD61F /* boxOfficeData.swift in Sources */,
+				68F161BE2C167A720059FA66 /* UILabel+.swift in Sources */,
 				689BAD402C120FD100BCD61F /* WeatherData.swift in Sources */,
 				689BAD322C10E46A00BCD61F /* ReusableProtocol+.swift in Sources */,
 				6851650F2C10433000268CC1 /* LotteryViewController.swift in Sources */,

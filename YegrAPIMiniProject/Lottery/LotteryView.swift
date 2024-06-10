@@ -215,15 +215,13 @@ class LotteryView: UIView {
         inputTextField.placeholder = "회차를 입력해주세요"
         
         // InfoLabel
-        InfoLabel.text = "당첨번호 안내"
+        InfoLabel.setUI(labelTextColor: .label, textFontSize: .systemFont(ofSize: 17))
         InfoLabel.textColor = .label
         InfoLabel.textAlignment = .left
-        InfoLabel.font = .systemFont(ofSize: 17)
         
         // drawDateLabel
-        drawDateLabel.textColor = .darkGray
+        drawDateLabel.setUI(labelTextColor: .darkGray, textFontSize: .systemFont(ofSize: 15))
         drawDateLabel.textAlignment = .right
-        drawDateLabel.font = .systemFont(ofSize: 15)
         
         //  underLineView
         underLineView.backgroundColor = .systemGray4
@@ -232,12 +230,10 @@ class LotteryView: UIView {
         roundResultInfoStackView.spacing = 8
         
         // roundNumberLabel
-        roundNumberLabel.textColor = .systemOrange
-        roundNumberLabel.font = .boldSystemFont(ofSize: 25)
+        roundNumberLabel.setUI(labelTextColor: .systemOrange, textFontSize: .boldSystemFont(ofSize: 25))
         
+        resultInfoLabel.setUI(labelTextColor: .label, textFontSize: .systemFont(ofSize: 25))
         resultInfoLabel.text = "당첨 결과"
-        resultInfoLabel.textColor = .label
-        resultInfoLabel.font = .systemFont(ofSize: 25)
         
         // resultNumberStackView
         resultNumberStackView.spacing = 5
@@ -263,9 +259,8 @@ class LotteryView: UIView {
             $0.clipsToBounds = true
         }
         
+        plusLabel.setUI(labelTextColor: .label, textFontSize: .boldSystemFont(ofSize: 18))
         plusLabel.text = "+"
-        plusLabel.textColor = .label
-        plusLabel.font = .boldSystemFont(ofSize: 18)
         plusLabel.textAlignment = .center
         
         bonusLabel.text = "보너스"

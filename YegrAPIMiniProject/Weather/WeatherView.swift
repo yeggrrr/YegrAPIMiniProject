@@ -101,7 +101,6 @@ class WeatherView: UIView {
         // view
         backgroundColor = UIColor(named: "mainBackgroundColor")
         
-        
         // backgroundImageView
         backgroundImageView.image = UIImage(named: "weatherBackground")
         backgroundImageView.alpha = 0.3
@@ -135,19 +134,15 @@ class WeatherView: UIView {
         descriptionStackView.distribution = .fillEqually
         
         // weatherLabel
-        weatherLabel.textColor = .label
-        weatherLabel.font = .boldSystemFont(ofSize: 17)
+        weatherLabel.setUI(labelTextColor: .label, textFontSize: .boldSystemFont(ofSize: 17))
         
         // currentTempLabel
-        currentTempLabel.textColor = .label
-        currentTempLabel.font = .boldSystemFont(ofSize: 17)
+        currentTempLabel.setUI(labelTextColor: .label, textFontSize: .boldSystemFont(ofSize: 17))
         
         // lowestTempLabel
-        lowestTempLabel.textColor = .label
-        lowestTempLabel.font = .boldSystemFont(ofSize: 17)
+        lowestTempLabel.setUI(labelTextColor: .label, textFontSize: .boldSystemFont(ofSize: 17))
         
         // highestTempLabel
-        highestTempLabel.textColor = .label
-        highestTempLabel.font = .boldSystemFont(ofSize: 17)
+        highestTempLabel.setUI(labelTextColor: .label, textFontSize: .boldSystemFont(ofSize: 17))
     }
 }
