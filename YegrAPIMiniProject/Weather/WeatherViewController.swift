@@ -35,11 +35,18 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureNavigation()
         configurHierarchy()
         configureLayout()
         configureUI()
         locationManager.delegate = self
         checkCurrentLocationAuthorization()
+    }
+    
+    func configureNavigation() {
+        let right = UIBarButtonItem(image: UIImage(systemName: "arrow.counterclockwise"), style: .plain, target: self, action: #selector(reloadButtonClicked))
+        navigationItem.rightBarButtonItem = right
+        navigationItem.rightBarButtonItem?.tintColor = .white
     }
     
     func configurHierarchy() {
@@ -103,6 +110,10 @@ class WeatherViewController: UIViewController {
         let okButton = UIAlertAction(title: "닫기", style: .default)
         alert.addAction(okButton)
         present(alert, animated: true)
+    }
+    
+    @objc func reloadButtonClicked() {
+        setData()
     }
 }
 
